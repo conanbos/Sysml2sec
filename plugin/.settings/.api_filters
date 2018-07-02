@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<component id="SysmlTool" version="2">
+    <resource path="src/com/inria/sysml/tools/widgets/AttributeTableItem.java" type="com.inria.sysml.tools.widgets.AttributeTableItem">
+        <filter id="571473929">
+            <message_arguments>
+                <message_argument value="TableItem"/>
+                <message_argument value="AttributeTableItem"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/com/inria/sysml/tools/widgets/MappingRuleItem.java" type="com.inria.sysml.tools.widgets.MappingRuleItem">
+        <filter id="571473929">
+            <message_arguments>
+                <message_argument value="TreeItem"/>
+                <message_argument value="MappingRuleItem"/>
+            </message_arguments>
+        </filter>
+    </resource>
+    <resource path="src/com/inria/sysml/tools/widgets/SourceModelItem.java" type="com.inria.sysml.tools.widgets.SourceModelItem">
+        <filter id="571473929">
+            <message_arguments>
+                <message_argument value="TreeItem"/>
+                <message_argument value="SourceModelItem"/>
+            </message_arguments>
+        </filter>
+    </resource>
+</component>
