@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<transform>
+	<template match="/">
+		<TURTLEGMODELING version="0.98-beta4">
+			<Modeling type="AVATAR Design" nameTab="Design">
+				<AVATARBlockDiagramPanel name="Block Diagram" minX="10" maxX="2500" minY="10" maxY="1500">
+					<Source type="fill">
+						<MainCode value="void __user_init() {"/>
+						<MainCode value="}"/>
+						<Optimized value="true" />
+						<Validated value="" />
+						<Ignored value="" />
+					</Source>
+				</AVATARBlockDiagramPanel>
+			</Modeling>
+			
+			<Modeling type="TML Component Design" nameTab="DIPLODOCUS_C_Design">
+				<TMLComponentTaskDiagramPanel name="TML Component Task Diagram" minX="10" maxX="2500" minY="10" 
+					maxY="1500" channels="true" events="true" requests="true" zoom="1.0" />
+			</Modeling>
+			
+			<Modeling type="TML Architecture" nameTab="Architecture">
+				<TMLArchiDiagramPanel name="DIPLODOCUS architecture and mapping Diagram" minX="10" maxX="2500" minY="10" 
+					maxY="1500" attributes="0" masterClockFrequency="200" />
+			</Modeling>
+		</TURTLEGMODELING>
+	</template>
+
+	<template match="Softwares" target="/TURTLEGMODELING/Modeling/TMLComponentTaskDiagramPanel">
+		<COMPONENT type="1202" id="${createId(@_name)}" >
+			<cdparam x="112" y="211" />
+			<sizeparam width="200" height="150" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+			<hidden value="false" />
+			<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+			<infoparam name="Primitive component" value="${@_name}" />
+			<TGConnectingPoint num="0" id="${createId()}" />
+			<TGConnectingPoint num="1" id="${createId()}" />
+			<TGConnectingPoint num="2" id="${createId()}" />
+			<TGConnectingPoint num="3" id="${createId()}" />
+			<TGConnectingPoint num="4" id="${createId()}" />
+			<TGConnectingPoint num="5" id="${createId()}" />
+			<TGConnectingPoint num="6" id="${createId()}" />
+			<TGConnectingPoint num="7" id="${createId()}" />
+			<extraparam></extraparam>
+		</COMPONENT>
+	</template>
+	
+	<template match="interaction" target="/TURTLEGMODELING/Modeling/TMLComponentTaskDiagramPanel">
+		<CONNECTOR type="126" id="${createId()}" >
+			<cdparam x="540" y="369" />
+			<sizeparam width="0" height="0" minWidth="0" minHeight="0" maxWidth="2000" 
+				maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+			<infoparam name="connector" value="Connector between ports" />
+			<P1  x="540" y="369" id="${createSourceId()}" />
+			<P2  x="712" y="380" id="${createTargetId()}" />
+			<AutomaticDrawing  data="true" />
+		</CONNECTOR>
+		
+		<SUBCOMPONENT type="1203" id="${createId()}" >
+			<father id="${getNamedId(getNameByPath(@_target))}" num="${getFatherNum(getNameByPath(@_target))}" />
+			<cdparam x="472" y="282" />
+			<sizeparam width="26" height="26" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+			<hidden value="false" />
+			<cdrectangleparam minX="-13" maxX="187" minY="-13" maxY="137" />
+			<infoparam name="Primitive port" value="Channel comm" />
+			<TGConnectingPoint num="0" id="${getTargetId()}" />
+			<extraparam>
+				<Prop commName="${@_name}" commType="0" origin="false" finite="false" blocking="false" 
+					maxSamples="8" widthSamples="4" isLossy="false" isPrex="false" isPostex="false" 
+					lossPercentage="0" maxNbOfLoss="0" dataFlowType="uint_16" associatedEvent="" 
+					checkConf="false" checkConfStatus="0" checkAuth="false" checkWeakAuthStatus="0" 
+					checkStrongAuthStatus="0" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+			</extraparam>
+		</SUBCOMPONENT>
+		
+		<SUBCOMPONENT type="1203" id="${createId()}" >
+			<father id="${getNamedId(getNameByPath(@_source))}" num="${getFatherNum(getNameByPath(@_source))}" />
+			<cdparam x="299" y="280" />
+			<sizeparam width="26" height="26" minWidth="1" minHeight="1" maxWidth="2000" maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+			<hidden value="false" />
+			<cdrectangleparam minX="-13" maxX="187" minY="-13" maxY="137" />
+			<infoparam name="Primitive port" value="Channel comm" />
+			<TGConnectingPoint num="0" id="${getSourceId()}" />
+			<extraparam>
+				<Prop commName="${@_name}" commType="0" origin="true" finite="false" blocking="false" 
+					maxSamples="8" widthSamples="4" isLossy="false" isPrex="false" isPostex="false" 
+					lossPercentage="0" maxNbOfLoss="0" dataFlowType="VOID" associatedEvent="VOID" 
+					checkConf="false" checkConfStatus="0" checkAuth="false" checkWeakAuthStatus="0" 
+					checkStrongAuthStatus="0" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+				<Type type="0" typeOther="" />
+			</extraparam>
+		</SUBCOMPONENT>
+	</template>
+	
+	
+	<template match="Hardwares" target="/TURTLEGMODELING/Modeling/TMLArchiDiagramPanel">
+		<COMPONENT type="1100" id="${createId(@_name)}" >
+			<cdparam x="140" y="368" />
+			<sizeparam width="250" height="200" minWidth="150" minHeight="100" maxWidth="2000" 
+			maxHeight="2000" minDesiredWidth="0" minDesiredHeight="0" />
+			<hidden value="false" />
+			<cdrectangleparam minX="10" maxX="2500" minY="10" maxY="1500" />
+			<infoparam name="${@_name}" value="name" />
+			<TGConnectingPoint num="0"  id="${createId()}" />
+			<TGConnectingPoint num="1"  id="${createId()}" />
+			<TGConnectingPoint num="2"  id="${createId()}" />
+			<TGConnectingPoint num="3"  id="${createId()}" />
+			<TGConnectingPoint num="4"  id="${createId()}" />
+			<TGConnectingPoint num="5"  id="${createId()}" />
+			<TGConnectingPoint num="6"  id="${createId()}" />
+			<TGConnectingPoint num="7"  id="${createId()}" />
+			<TGConnectingPoint num="8"  id="${createId()}" />
+			<TGConnectingPoint num="9"  id="${createId()}" />
+			<TGConnectingPoint num="10" id="${createId()}" />
+			<TGConnectingPoint num="11" id="${createId()}" />
+			<TGConnectingPoint num="12" id="${createId()}" />
+			<TGConnectingPoint num="13" id="${createId()}" />
+			<TGConnectingPoint num="14" id="${createId()}" />
+			<TGConnectingPoint num="15" id="${createId()}" />
+			<TGConnectingPoint num="16" id="${createId()}" />
+			<TGConnectingPoint num="17" id="${createId()}" />
+			<TGConnectingPoint num="18" id="${createId()}" />
+			<TGConnectingPoint num="19" id="${createId()}" />
+			<TGConnectingPoint num="20" id="${createId()}" />
+			<TGConnectingPoint num="21" id="${createId()}" />
+			<TGConnectingPoint num="22" id="${createId()}" />
+			<TGConnectingPoint num="23" id="${createId()}" />
+			<extraparam>
+			<info stereotype="CPU" nodeName="${@_name}" />
+			<attributes nbOfCores="1" byteDataSize="4"  schedulingPolicy="0"  sliceTime="10000"  
+				goIdleTime="10"  maxConsecutiveIdleCycles="10"  pipelineSize="5"  taskSwitchingTime="20"  
+				branchingPredictionPenalty="2"  cacheMiss="5" execiTime="1" execcTime="1" clockRatio="1" 
+				MECType="0" encryption="0"/>
+			</extraparam>
+		</COMPONENT>
+	</template>
+	
+	
+	<template match="allocation" target="/TURTLEGMODELING/Modeling/TMLArchiDiagramPanel">
+		<SUBCOMPONENT type="1101" id="${createId(@_name);}" >
+			<father id="${getNamedId(getNameByPath(@_physicalelement))}" num="${getFatherNum(getNameByPath(@_physicalelement))}" />
+			<cdparam x="620" y="471" />
+			<sizeparam width="204" height="40" minWidth="75" minHeight="0" maxWidth="2000" maxHeight="2000" 
+				minDesiredWidth="0" minDesiredHeight="0" />
+			<hidden value="false" />
+			<cdrectangleparam minX="0" maxX="46" minY="0" maxY="160" />
+			<infoparam name="TGComponent" value="${'DIPLODOCUS_C_Design::' + getNameByPath(@_logicalelement)}" />
+				<TGConnectingPoint num="0" id="${createId()}" />
+				<TGConnectingPoint num="1" id="${createId()}" />
+				<TGConnectingPoint num="2" id="${createId()}" />
+				<TGConnectingPoint num="3" id="${createId()}" />
+				<TGConnectingPoint num="4" id="${createId()}" />
+				<TGConnectingPoint num="5" id="${createId()}" />
+				<TGConnectingPoint num="6" id="${createId()}" />
+				<TGConnectingPoint num="7" id="${createId()}" />
+			<extraparam>
+			<info 
+				value="${'DIPLODOCUS_C_Design::' + getNameByPath(@_logicalelement)}" 
+				taskName="${getNameByPath(@_logicalelement)}" 
+				referenceTaskName="DIPLODOCUS_C_Design" 
+				priority="0" 
+				operation="${getNameByPath(@_logicalelement)}" 
+				fatherComponentMECType="0" />
+			</extraparam>
+		</SUBCOMPONENT>
+	</template>
+
+
+	<javascript>
+		<![CDATA[
+				
+			var id = 1;
+			var idList = [];
+			var fatherReffList = [];
+			
+			var sourceId = undefined;
+			var targetId = undefined;
+		
+			function getType(type) {
+				switch(type) {
+					case "bool": return "4";
+					case "int":  return "8";
+					default: return "";
+				}
+			};
+			
+			function createId(idName) {
+				
+				if(idName != undefined) {
+					idList[idName] = (id++) + "";
+					return idList[idName];
+				} else {
+					return (id++) + "";
+				}
+			};
+			
+			function getNamedId(idName) {
+				return idList[idName];
+			}
+			
+			function getFatherNum(idName) {
+				if(fatherReffList[idName] == undefined) {
+					fatherReffList[idName] = "1";
+				} else {
+					fatherReffList[idName] = (parseInt(fatherReffList[idName]) + 1) + "";
+				}
+				return fatherReffList[idName];
+			}
+			
+			function createSourceId() {
+				sourceId = createId();
+				return sourceId;
+			}
+			
+			function getSourceId() {
+				return sourceId;
+			}
+			
+			function createTargetId() {
+				targetId = createId();
+				return targetId;
+			}
+			
+			function getTargetId() {
+				return targetId;
+			}
+			
+			function getNameByPath(path) {
+				var name = eMap[path]._name;//eMap在程序中定义了
+				return name;
+			}
+			
+		]]>
+	</javascript>
+
+</transform>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

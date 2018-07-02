@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<test_MModel:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:test_MModel="http://www.example.org/test_MModel" name="ATP">
+  <Softwares xsi:type="test_MModel:function" name="Gps"/>
+  <Softwares xsi:type="test_MModel:function" name="GetPos"/>
+  <Softwares xsi:type="test_MModel:function" name="CheckCondition"/>
+  <Softwares xsi:type="test_MModel:function" name="SendCMD"/>
+  <Softwares xsi:type="test_MModel:function" name="Executor"/>
+  <Hardwares xsi:type="test_MModel:node" name="CPU2"/>
+  <Hardwares xsi:type="test_MModel:node" name="GPS_rcv"/>
+  <Hardwares xsi:type="test_MModel:node" name="CPU1"/>
+  <Hardwares xsi:type="test_MModel:node" name="comm"/>
+  <interaction name="I_getposition" target="//@Softwares.1" source="//@Softwares.0"/>
+  <interaction name="I_checkCon" target="//@Softwares.2" source="//@Softwares.1"/>
+  <interaction name="I_sendCmd" target="//@Softwares.3" source="//@Softwares.2"/>
+  <interaction name="I_exe" target="//@Softwares.4" source="//@Softwares.3"/>
+  <allocation name="H_GPS" logicalelement="//@Softwares.0" physicalelement="//@Hardwares.1"/>
+  <allocation name="H_CON" logicalelement="//@Softwares.3" physicalelement="//@Hardwares.3"/>
+  <allocation name="H_POS1" logicalelement="//@Softwares.1" physicalelement="//@Hardwares.2"/>
+  <allocation name="H_POS2" logicalelement="//@Softwares.2" physicalelement="//@Hardwares.2"/>
+  <allocation name="H_EXE" logicalelement="//@Softwares.4" physicalelement="//@Hardwares.0"/>
+</test_MModel:System>
